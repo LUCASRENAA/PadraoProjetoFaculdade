@@ -26,7 +26,7 @@ public class ResultadoDoBichoController {
 		List<ResultadoDoBicho> resultados = Facade.getCurrentInstance().readAll();
 		
 		m.addAttribute("resultados",resultados);
-		return "resultado/";
+		return "resultado/ultimoresultado";
 		
 	}
 	
