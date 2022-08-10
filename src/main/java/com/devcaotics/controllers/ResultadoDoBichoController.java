@@ -23,7 +23,7 @@ public class ResultadoDoBichoController {
 	
 	@RequestMapping("/index")
 	public String index20(Model m) {
-		List<ResultadoDoBicho> resultados = Facade.getCurrentInstance().readAll();
+		int resultados = Facade.getCurrentInstance().lastId();
 		
 		m.addAttribute("resultados",resultados);
 		return "resultado/ultimoresultado";
@@ -37,7 +37,7 @@ public class ResultadoDoBichoController {
 		resultado = Facade.getCurrentInstance().read(id);
 		
 		m.addAttribute("resultados",resultado);
-		return "resultado/ultimoresultado";
+		return "resultado/resultado2";
 		
 	}
 	@RequestMapping("/home")

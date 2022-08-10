@@ -60,10 +60,19 @@ public class Facade {
         return this.rResultado.readAll();
     }
 
+    
+ public int lastId(){
+    	
+        return this.rResultado.lastId();
+     }
+ 
+ 
     public ResultadoDoBicho read(int id){
     	
         return this.rResultado.read(id);
      }
+
+
 
         
     

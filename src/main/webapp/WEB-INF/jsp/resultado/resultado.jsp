@@ -36,7 +36,7 @@
             <table>
             <tr>
                 <th>Posição</th>
-                <th>Resultado  <a href="/resultado?id=${item.id}">${item.id}</a> </th>
+                <th>Resultado  <a href="/resultado/${item.id}">${item.id}</a> </th>
             </tr>
             
 			<tr>

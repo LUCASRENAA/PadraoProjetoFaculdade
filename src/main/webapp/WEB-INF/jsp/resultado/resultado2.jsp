@@ -30,11 +30,54 @@
 
     <main>
       
-        <h1>RESULTADO</h1>
-        <div id="numeros-sorteio">
-            <h1><a href="/resultado/${resultados}">${resultados}</a></h1>
-        </div>
-
+          		        <h1>Resultado</h1>
+          
+            <table>
+            <tr>
+                <th>Posição</th>
+                <th>Resultado  <a href="/resultado/${resultados.id}">${resultados.id}</a> </th>
+            </tr>
+            
+			<tr>
+							
+			                <td>1º</td>
+		
+				<td>${resultados.resultado1}</td>
+				
+				
+					</tr>
+					<tr>
+							
+			                <td>2º</td>
+		
+				<td>${resultados.resultado2}</td>
+				
+				
+					</tr><tr>
+							
+			                <td>3º</td>
+		
+				<td>${resultados.resultado3}</td>
+				
+				
+					</tr><tr>
+							
+			                <td>4º</td>
+		
+				<td>${resultados.resultado4}</td>
+				
+				
+					</tr><tr>
+							
+			                <td>5º</td>
+		
+				<td>${resultados.resultado5}</td>
+				
+				
+					</tr>
+		        </table>
+		        
+		<p></p>
     </main>
 
     <footer>
@@ -144,37 +187,4 @@ main table tr:nth-child(even) {
 #menu-horizontal ul li:last-child {
 
     float: right;
-}</style>
-
-<style>
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-
-}
-
-main h1 {
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-#numeros-sorteio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    height: 100px;
-    background-color: rgb(37, 37, 39);
-    box-shadow: 2px 3px 4px rgb(24, 139, 233);
-}
-
-#numeros-sorteio h1 {
-
-    color: #FFF;
-    letter-spacing: 6px;
-    font-weight: 700;
 }</style>

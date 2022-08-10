@@ -132,6 +132,54 @@ public class ResultadoDoBichoRepository implements GenericRepository<ResultadoDo
 	        return null;
 	    }
 
+	 
+	 @Override
+		public int lastId() {
+			// TODO Auto-generated method stub
+			  String sql = "select * from resultado";
+			  int lastId = 0;
+		        
+		        List<ResultadoDoBicho> carros = new ArrayList<>();
+		        
+		        try {
+		            
+		            PreparedStatement pstm = com.devcaotics.model.
+		                    dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+		            
+		            ResultSet result = pstm.executeQuery();
+		            
+		            
+		            
+		           while(result.next()){
+		        	   ResultadoDoBicho c =  new ResultadoDoBicho();
+		                c.setId(result.getInt("id"));
+		                lastId = result.getInt("id");
+		                
+		                
+
+		                c.setResultado1(result.getInt("resultado1"));
+		                c.setResultado2(result.getInt("resultado2"));
+		                c.setResultado3(result.getInt("resultado3"));
+		                c.setResultado4(result.getInt("resultado4"));
+		                c.setResultado5(result.getInt("resultado5"));
+
+		                carros.add(c);
+		            }
+		            
+		            
+		            
+		        } catch (SQLException ex) {
+		            Logger.getLogger(ResultadoDoBichoRepository.class.getName()).log(Level.SEVERE, null, ex);
+		        } catch (ClassNotFoundException ex) {
+		            Logger.getLogger(ResultadoDoBichoRepository.class.getName()).log(Level.SEVERE, null, ex);
+		        }
+		        
+		        return lastId;
+		        
+		        
+		 
+
+		}
 
 
 }

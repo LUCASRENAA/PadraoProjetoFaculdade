@@ -20,5 +20,6 @@ public interface GenericRepository<T, I> {
     public T read(int id);
     public void delete(I i);
     public List<T> readAll();
+	int lastId();
     
 }
