@@ -95,12 +95,43 @@ public class ResultadoDoBichoRepository implements GenericRepository<ResultadoDo
 
 	}
 
-	@Override
-	public ResultadoDoBicho read(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	 @Override
+	    public ResultadoDoBicho read(int i) {
+	        
+	        String sql = "select * from resultado where id=?";
+	        
+	        try {
+	            
+	            PreparedStatement pstm = com.devcaotics.model.
+	                    dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+	            
+	            pstm.setInt(1, i);
+	            
+	            ResultSet result = pstm.executeQuery();
+	            
+	            if(result.next()){
+	            	ResultadoDoBicho c =  new ResultadoDoBicho();
+	                c.setId(i);
+	                c.setResultado1(result.getInt("resultado1"));
+	                c.setResultado2(result.getInt("resultado2"));
+	                c.setResultado3(result.getInt("resultado3"));
+	                c.setResultado4(result.getInt("resultado4"));
+	                c.setResultado5(result.getInt("resultado5"));
+
+	                return c;
+	            }
+	            
+	            
+	            
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ResultadoDoBichoRepository.class.getName()).log(Level.SEVERE, null, ex);
+	        } catch (ClassNotFoundException ex) {
+	            Logger.getLogger(ResultadoDoBichoRepository.class.getName()).log(Level.SEVERE, null, ex);
+	        }
+	        
+	        return null;
+	    }
+
 
 
 }

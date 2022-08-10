@@ -31,7 +31,15 @@ public class ResultadoDoBichoController {
 	}
 	
 	
-	
+	@RequestMapping("/resultado/{id}")
+	public String visualiza(Model m, @PathVariable("id") int id) 	 {
+		ResultadoDoBicho resultado = new ResultadoDoBicho();
+		resultado = Facade.getCurrentInstance().read(id);
+		
+		m.addAttribute("resultados",resultado);
+		return "resultado/ultimoresultado";
+		
+	}
 	@RequestMapping("/home")
 	public String index2(Model m) {
 		List<ResultadoDoBicho> resultados = Facade.getCurrentInstance().readAll();

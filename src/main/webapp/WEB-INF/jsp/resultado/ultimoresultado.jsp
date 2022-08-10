@@ -35,7 +35,7 @@
             <h1>123-456</h1>
         </div>
           <c:forEach items="${resultados}" var="item">
-        
+        ${item.id}
 		</c:forEach>
     </main>
 
