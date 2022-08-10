@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.devcaotics.model.entities.Cliente;
 import com.devcaotics.model.entities.ResultadoDoBicho;
 import com.devcaotics.model.repository.Facade;
 
@@ -61,6 +62,16 @@ public class ResultadoDoBichoController {
 		return "resultado/resultado";
 		
 	}
+	
+	@RequestMapping("/cadastro")
+	public String cadastro(Model m) {
+		
+	
+		
+		return "resultado/cadastro";
+		
+	}
+	
 	
 
 	
